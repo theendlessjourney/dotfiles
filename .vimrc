@@ -32,13 +32,18 @@ set autoindent
 
 set termguicolors
 
-call plug#begin('~/.vim/plugged')
-Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-call plug#end()
+if has("nvim")
+	call plug#begin()
+	Plug 'gruvbox-community/gruvbox'
+	Plug 'EdenEast/nightfox.nvim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+	Plug 'rust-lang/rust.vim'
+	call plug#end()
+	"colorscheme gruvbox
+	colorscheme nordfox
+endif
 
-colorscheme gruvbox
 
-let g:python_host_prog = '/usr/bin/python2'
+let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_prog = '/usr/bin/python3'
